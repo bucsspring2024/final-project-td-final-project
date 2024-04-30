@@ -12,9 +12,6 @@ class Controller:
         self.running = True
 
     def handle_events(self):
-        """
-        Handles all input events from the user, including quitting and other keyboard events.
-        """
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
