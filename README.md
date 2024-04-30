@@ -2,7 +2,7 @@
 
 :warning: Everything between << >> needs to be replaced (remove << >> after replacing)
 
-# << Project Title >>
+# Runner Game
 ## CS110 Final Project  Spring, 2024 
 
 ## Team Member
@@ -31,11 +31,11 @@ Runner Game is a basic side scrolling game where players dodge obstacles to surv
 
 ### Features
 
-1. << Feature 1 >>
-2. << Feature 2 >>
-3. << Feature 3 >>
-4. << Feature 4 >>
-5. << Feature 5 >>
+1. Start menu
+2. Moveable character
+3. Obstacle collisions
+4. Scrolling background
+5. Game Over Screen
 
 ### Classes
 
