@@ -2,17 +2,17 @@
 :warning: Everything between << >> needs to be replaced (remove << >> after replacing)
 
 # << Project Title >>
-## CS110 Final Project  << Semester, Year >>
+## CS110 Final Project  Spring, 2024 
 
 ## Team Members
 
-<< Thirandi Dandeniya >>
+ Thirandi Dandeniya 
 
 ***
 
 ## Project Description
 
-<< Give an overview of your project >>
+Runner Game is a basic side scrolling game where players dodge obstacles to survive as long as possible. Jump in and see how long you can keep running!!!
 
 ***    
 
