@@ -1,4 +1,5 @@
 import pygame
+import sys
 
 class Controller:
     def __init__(self, screen, clock):
