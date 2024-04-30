@@ -5,7 +5,7 @@
 # << Project Title >>
 ## CS110 Final Project  Spring, 2024 
 
-## Team Members
+## Team Member
 
  Thirandi Dandeniya 
 
