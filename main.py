@@ -19,6 +19,13 @@ screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Runner Game")
 clock = pygame.time.Clock()
 
+def reset_game():
+    global player_rect, obstacles, last_obstacle_time
+    player_rect.topleft = (50, SCREEN_HEIGHT - 100)  # Reset player position
+    obstacles.clear()  # Clear all obstacles
+    last_obstacle_time = pygame.time.get_ticks()  # Reset obstacle timer
+
+
 # Load images function
 def load_image(img_path, width, height, colorkey=None):
     try:
@@ -30,6 +37,12 @@ def load_image(img_path, width, height, colorkey=None):
     except pygame.error as e:
         print(f'Unable to load image at path {img_path}. Error: {e}')
         return pygame.Surface((width, height))  # return empty surface if fail
+
+
+    # Initialize the game controller
+    game_controller = Controller(screen, player_image, [], background_image)
+    game_controller.mainloop()
+    pygame.quit()
 
 # Load player and background images or set defaults
 player_image = load_image('assets/player.png', 50, 50, WHITE)  # Updated path
@@ -86,6 +99,23 @@ def game_over():
     draw_text('Game Over', 50, WHITE, SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 - 30)
     draw_text('Press Enter to restart', 30, WHITE, SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 + 30)
     pygame.display.update()
+    
+    # Wait for user
+    waiting_for_input = True
+    while waiting_for_input:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RETURN:
+                    waiting_for_input = False  # Exit the loop and restart the game
+                elif event.key == pygame.K_ESCAPE:
+                    pygame.quit()
+                    sys.exit()
+
+    # Reset game state here if necessary
+    reset_game()
 
 # Main game loop
 def main():
