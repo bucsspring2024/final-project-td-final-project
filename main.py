@@ -1,6 +1,5 @@
 import pygame
 import sys
-import random
 from controller import Controller
 
 # Initialize pygame
