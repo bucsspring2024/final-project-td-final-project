@@ -1,6 +1,6 @@
 import pygame
 import sys
-from controller import Controller
+from controller import Controller, Player
 
 # Initialize pygame
 pygame.init()
@@ -17,6 +17,9 @@ RED = (255, 0, 0)
 
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Runner Game")
+player = Player(50, 480 - 100)
+controller = Controller(screen, player)
+controller.mainloop()
 clock = pygame.time.Clock()
 
 def reset_game():
@@ -30,7 +33,7 @@ def reset_game():
 def load_image(img_path, width, height, colorkey=None):
     try:
         image = pygame.image.load(img_path).convert()
-        if colorkey is not None:
+        if colorkey:
             image.set_colorkey(colorkey)
         image = pygame.transform.scale(image, (width, height))
         return image
